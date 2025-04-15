@@ -1,27 +1,28 @@
-# Three Kingdoms History Website
+# React + Three Kingdoms History Website
 
 A modern, accessible website for reading and understanding the biographies and annals from the "Records of the Three Kingdoms" (三國志) with clear English translations and historical context.
 
 ## Project Overview
 This project presents the fasticles (sections) from the Books of Wei, Shu, and Wu, allowing users to:
+
 - Browse fasticle lists for each kingdom
 - View main figures in each fasticle
 - Navigate via breadcrumbs with fasticle names
 - Read modern, accessible English translations (in progress)
 
 ## Features
-- **Consistent Navigation:** Fasticle lists for Wei, Shu, and Wu, each with ID, name, and main people.
-- **Dynamic Routing:** Detail pages for each fasticle (currently Wei/1 implemented).
-- **Breadcrumbs:** Show book and fasticle names for easy navigation.
-- **Translation Focus:** Translations are adapted for clarity, with added explanations for historical ranks and positions.
-- **No Horizontal Scrolling:** Layout ensures a clean, scroll-free experience on all devices.
+- Consistent Navigation: Fasticle lists for Wei, Shu, and Wu, each with ID, name, and main people.
+- Dynamic Routing: Detail pages for every fasticle in all three books, showing main people (record text in progress).
+- Breadcrumbs: Show book and fasticle names for easy navigation.
+- Translation Focus: Translations are adapted for clarity, with added explanations for historical ranks and positions.
+- No Horizontal Scrolling: Layout ensures a clean, scroll-free experience on all devices.
 
 ## Status of Each Book
 
 ### Book of Wei (魏書)
 | # | Fasticle Name | Status |
 |---|---------------|--------|
-| 1 | Annals of Emperor Wu | Translated and live |
+| 1 | Annals of Emperor Wu | Not yet translated |
 | 2 | Annals of Emperor Wen | Not yet translated |
 | 3 | Annals of Emperor Ming | Not yet translated |
 | 4 | Annals of the three young emperors | Not yet translated |
@@ -96,19 +97,20 @@ This project presents the fasticles (sections) from the Books of Wei, Shu, and W
 | 20 | Biographies of Wang, Lou, He, Wei, and Hua | Not yet translated |
 
 ## How to Run
-1. Install dependencies:
-   ```sh
-   npm install
-   ```
-2. Start the development server:
-   ```sh
-   npm run dev
-   ```
-3. Open your browser to the local address shown in the terminal (usually http://localhost:5173)
+
+Install dependencies:
+```bash
+npm install
+```
+Start the development server:
+```bash
+npm run dev
+```
+Open your browser to the local address shown in the terminal (usually http://localhost:5173)
 
 ## Contributing
-- Contributions for translations, historical notes, and UI improvements are welcome!
-- Please open issues or pull requests.
+Contributions for translations, historical notes, and UI improvements are welcome!
+Please open issues or pull requests.
 
 ## License
 MIT

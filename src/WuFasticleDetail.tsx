@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { weiFasticles } from './weiFasticles';
+import { wuFasticles } from './wuFasticles';
 
-const WeiFasticleDetail: React.FC = () => {
+const WuFasticleDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const fasticle = weiFasticles.find(f => String(f.id) === id);
+  const fasticle = wuFasticles.find(f => String(f.id) === id);
 
   if (!fasticle) {
     return <div className="scroll-container"><h2>Not Found</h2></div>;
@@ -20,4 +20,4 @@ const WeiFasticleDetail: React.FC = () => {
   );
 };
 
-export default WeiFasticleDetail;
+export default WuFasticleDetail;
