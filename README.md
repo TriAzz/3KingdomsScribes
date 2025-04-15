@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# Three Kingdoms History Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, accessible website for reading and understanding the biographies and annals from the "Records of the Three Kingdoms" (三國志) with clear English translations and historical context.
 
-Currently, two official plugins are available:
+## Project Overview
+This project presents the fasticles (sections) from the Books of Wei, Shu, and Wu, allowing users to:
+- Browse fasticle lists for each kingdom
+- View main figures in each fasticle
+- Navigate via breadcrumbs with fasticle names
+- Read modern, accessible English translations (in progress)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Consistent Navigation:** Fasticle lists for Wei, Shu, and Wu, each with ID, name, and main people.
+- **Dynamic Routing:** Detail pages for each fasticle (currently Wei/1 implemented).
+- **Breadcrumbs:** Show book and fasticle names for easy navigation.
+- **Translation Focus:** Translations are adapted for clarity, with added explanations for historical ranks and positions.
+- **No Horizontal Scrolling:** Layout ensures a clean, scroll-free experience on all devices.
 
-## Expanding the ESLint configuration
+## Status of Each Book
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Book of Wei (魏書)
+- Fasticle list implemented and navigable
+- Detail page for Fasticle 1 ("The Annals of Emperor Wu") live with English translation and context
+- Other detail pages: Coming soon
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Book of Shu (蜀書)
+- Fasticle list implemented and navigable
+- Detail pages: Coming soon
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Book of Wu (吳書)
+- Fasticle list implemented and navigable
+- Detail pages: Coming soon
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## How to Run
+1. Install dependencies:
+   ```sh
+   npm install
+   ```
+2. Start the development server:
+   ```sh
+   npm run dev
+   ```
+3. Open your browser to the local address shown in the terminal (usually http://localhost:5173)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Contributing
+- Contributions for translations, historical notes, and UI improvements are welcome!
+- Please open issues or pull requests.
+
+## License
+MIT
