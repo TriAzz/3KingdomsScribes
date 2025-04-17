@@ -12,6 +12,7 @@ const WuFasticleList: React.FC = () => {
             <th>ID</th>
             <th>Name</th>
             <th>Main People</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,20 @@ const WuFasticleList: React.FC = () => {
                 </Link>
               </td>
               <td>{fasticle.mainPeople.join(', ')}</td>
+              <td>
+                <span style={{ 
+                  color: fasticle.status.color, 
+                  padding: '2px 6px', 
+                  borderRadius: '4px', 
+                  backgroundColor: `${fasticle.status.color}20`, 
+                  fontWeight: 500,
+                  fontSize: '0.8em',
+                  whiteSpace: 'nowrap',
+                  display: 'inline-block'
+                }}>
+                  {fasticle.status.text}
+                </span>
+              </td>
             </tr>
           ))}
         </tbody>
