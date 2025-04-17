@@ -16,6 +16,11 @@ const Home: React.FC = () => {
         <a href="/shu" className="scroll-btn">Book of Shu</a>
         <a href="/wu" className="scroll-btn">Book of Wu</a>
       </div>
+      <div style={{ marginTop: '2em', textAlign: 'center' }}>
+        <a href="/chatbot" className="scroll-btn" style={{ fontSize: '1.08rem', background: '#e5d3a1', color: '#3a2c00', border: '1.5px solid #c2b280' }}>
+          Ask the Three Kingdoms AI Chatbot
+        </a>
+      </div>
     </div>
   );
 };

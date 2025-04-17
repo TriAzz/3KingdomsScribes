@@ -10,6 +10,7 @@ import WuFasticleList from './WuFasticleList';
 import WeiFasticleDetail from './WeiFasticleDetail';
 import ShuFasticleDetail from './ShuFasticleDetail';
 import WuFasticleDetail from './WuFasticleDetail';
+import ThreeKingdomsChatbot from './ThreeKingdomsChatbot';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/shu/:id" element={<ShuFasticleDetail />} />
           <Route path="/wu" element={<WuFasticleList />} />
           <Route path="/wu/:id" element={<WuFasticleDetail />} />
+          <Route path="/chatbot" element={<ThreeKingdomsChatbot />} />
         </Routes>
       </App>
     </BrowserRouter>
