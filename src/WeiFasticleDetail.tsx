@@ -51,9 +51,9 @@ const WeiFasticleDetail: React.FC = () => {
     };
 
     return (
-      <div style={{ display: 'flex', alignItems: 'flex-start', maxWidth: '1200px', margin: '0 auto 0 auto', paddingLeft: '150px', paddingRight: '20px' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', maxWidth: '1400px', margin: '0 0 0 300px', paddingLeft: '40px', paddingRight: '20px' }}>
         {/* Left Navigation Menu */}
-        <nav style={{ minWidth: 200, marginRight: 24, background: '#f5f7fa', borderRadius: 8, padding: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', position: 'sticky', top: 100, height: 'fit-content' }}>
+        <nav style={{ minWidth: 240, marginRight: 35, background: '#f5f7fa', borderRadius: 8, padding: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', position: 'sticky', top: 100, height: 'fit-content' }}>
           <div style={{ marginBottom: 16 }}>
             <button onClick={scrollToTitle} style={{ background: '#2255aa', color: 'white', border: 'none', borderRadius: 4, padding: '6px 18px', cursor: 'pointer', fontWeight: 500, width: '100%' }}>Go to Title</button>
           </div>
@@ -93,7 +93,7 @@ const WeiFasticleDetail: React.FC = () => {
           )}
         </nav>
         {/* Main Content */}
-        <div className="scroll-container" style={{ flex: 1 }}>
+        <div className="scroll-container" style={{ flex: 1, maxWidth: 'calc(100% - 290px)' }}>
           <h2 id="wei-emperor-wu-title">{fasticle.name}</h2>
           <div style={{marginTop: '2em', fontSize: '1.08em', lineHeight: 1.7}}>
             {recordLines.map((line, idx) => {
@@ -226,9 +226,9 @@ const WeiFasticleDetail: React.FC = () => {
     };
 
     return (
-      <div style={{ display: 'flex', alignItems: 'flex-start', maxWidth: '1200px', margin: '0 auto 0 auto', paddingLeft: '150px', paddingRight: '20px' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', maxWidth: '1400px', margin: '0 0 0 300px', paddingLeft: '40px', paddingRight: '20px' }}>
         {/* Left Navigation Menu */}
-        <nav style={{ minWidth: 200, marginRight: 24, background: '#f5f7fa', borderRadius: 8, padding: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', position: 'sticky', top: 100, height: 'fit-content' }}>
+        <nav style={{ minWidth: 240, marginRight: 35, background: '#f5f7fa', borderRadius: 8, padding: 16, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', position: 'sticky', top: 100, height: 'fit-content' }}>
           <div style={{ marginBottom: 16 }}>
             <button onClick={scrollToTitle} style={{ background: '#2255aa', color: 'white', border: 'none', borderRadius: 4, padding: '6px 18px', cursor: 'pointer', fontWeight: 500, width: '100%' }}>Go to Title</button>
           </div>
@@ -269,7 +269,7 @@ const WeiFasticleDetail: React.FC = () => {
         </nav>
         
         {/* Main Content */}
-        <div className="scroll-container" style={{ flex: 1 }}>
+        <div className="scroll-container" style={{ flex: 1, maxWidth: 'calc(100% - 290px)' }}>
           <h2 id="wei-lubu-title">{fasticle.name}</h2>
           <div style={{marginTop: '2em', fontSize: '1.08em', lineHeight: 1.7}}>
             {recordLines.map((line, idx) => {
