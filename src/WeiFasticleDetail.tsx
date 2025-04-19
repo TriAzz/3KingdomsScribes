@@ -193,7 +193,7 @@ const WeiFasticleDetail: React.FC = () => {
     const recordLines = weiFasticle7;
 
     // Alternative approach with explicit name matching
-    const headingNames = ["Lü Bu", "Zhang Miao", "Chen Gong", "Chen Deng", "Zang Hong"];
+    const headingNames = ["Lü Bu", "Zhang Miao", "Chen Gong", "Chen Deng", "Zang Hong", "Author's Evaluation"];
     const biographySections = recordLines.reduce((acc, line, index) => {
       const trimmedLine = line.trim();
       if (headingNames.includes(trimmedLine)) {
