@@ -369,7 +369,7 @@ const WeiFasticleDetail: React.FC = () => {
     // Use the biographies from weiFasticle17
     const recordLines = weiFasticle17;
 
-    // Alternative approach with explicit name matching
+    // Define section headings for navigation
     const headingNames = ["Zhang Liao", "Yue Jin", "Yu Jin", "Zhang He", "Xu Huang", "Zhu Ling", "Author's Assessment"];
     const biographySections = recordLines.reduce((acc, line, index) => {
       const trimmedLine = line.trim();
@@ -433,8 +433,7 @@ const WeiFasticleDetail: React.FC = () => {
                       cursor: 'pointer', 
                       textAlign: 'left',
                       color: '#2255aa',
-                      transition: 'background 0.2s',
-                      // ':hover' is not supported in inline styles, use a CSS class instead
+                      transition: 'background 0.2s'
                     }}
                   >
                     {section.name}
@@ -450,6 +449,26 @@ const WeiFasticleDetail: React.FC = () => {
           <h2 id="wei-generals-title">{fasticle.name}</h2>
           <div style={{marginTop: '2em', fontSize: '1.08em', lineHeight: 1.7}}>
             {recordLines.map((line, idx) => {
+              // Display the first line as a subtitle
+              if (idx === 0) {
+                return (
+                  <h3 
+                    key={idx}
+                    style={{
+                      marginTop: '0.5em',
+                      marginBottom: '1.5em',
+                      fontSize: '1.3em',
+                      fontWeight: 400,
+                      fontStyle: 'italic',
+                      color: '#444',
+                      borderBottom: 'none'
+                    }}
+                  >
+                    {replaceNames(line)}
+                  </h3>
+                );
+              }
+
               // Check if this line is a biography section header
               const isBiographyHeader = biographySections.some(section => section.index === idx);
               
