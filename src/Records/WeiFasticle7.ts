@@ -1,5 +1,5 @@
 export const weiFasticle7: string[] = [
-    "The Biographies of Lu Bu, Zhang Miao, Chen Deng and Zang Hong",
+    "The Biographies of Lu Bu, and some related to him",
     "Lü Bu",
     "Lü Bu, courtesy name Fengxian, was a native of Jiuyuan in Wuyuan Commandery. He served in Bingzhou due to his martial prowess. When Governor Ding Yuan was appointed as Cavalry Commandant and stationed in Henei, he made Lü Bu his assistant and treated him with great favor. After Emperor Ling died, Yuan led his troops to Luoyang.",
     "[According to the \"Record of Heroes\": Yuan's courtesy name was Jianyang. He came from a humble family and was a rough person with military courage, skilled in horseback riding and archery. As an official in the southern county, he never refused difficult missions. In times of emergency, he would pursue bandits, always at the forefront. He barely knew how to read and write, and had little administrative ability.]",
