@@ -11,18 +11,18 @@ const PATH_LABELS: Record<string, string> = {
   '/wu': 'Book of Wu',
 };
 
-function getFasticleName(book: string, id: string) {
+function getFasticleBreadcrumb(book: string, id: string) {
   if (book === 'wei') {
     const fasticle = weiFasticles.find(f => String(f.id) === id);
-    return fasticle ? fasticle.name : id;
+    return fasticle ? fasticle.mainPeople.join(', ') : id;
   }
   if (book === 'shu') {
     const fasticle = shuFasticles.find(f => String(f.id) === id);
-    return fasticle ? fasticle.name : id;
+    return fasticle ? fasticle.mainPeople.join(', ') : id;
   }
   if (book === 'wu') {
     const fasticle = wuFasticles.find(f => String(f.id) === id);
-    return fasticle ? fasticle.name : id;
+    return fasticle ? fasticle.mainPeople.join(', ') : id;
   }
   return id;
 }
@@ -36,7 +36,7 @@ const Breadcrumbs: React.FC = () => {
       const path = '/' + pathnames.slice(0, idx + 1).join('/');
       // Special case for /wei/:id, /shu/:id, /wu/:id
       if ((pathnames[0] === 'wei' || pathnames[0] === 'shu' || pathnames[0] === 'wu') && idx === 1) {
-        return { to: path, label: getFasticleName(pathnames[0], part) };
+        return { to: path, label: getFasticleBreadcrumb(pathnames[0], part) };
       }
       return { to: path, label: PATH_LABELS[path] || part };
     })

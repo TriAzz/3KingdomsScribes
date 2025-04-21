@@ -12,26 +12,31 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 0;
 }
 
 .site-header {
   position: fixed;
-  top: 24px;
-  left: 32px;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   z-index: 200;
-  background: none;
+  background: rgba(243, 230, 196, 0.95);
+  box-shadow: 0 2px 10px rgba(60,40,10,0.1);
+  padding: 12px 32px;
+  height: 76px; /* Fixed header height */
+  box-sizing: border-box;
 }
 
 .site-logo {
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-right: 24px;
   box-shadow: 0 2px 10px rgba(50,40,20,0.04);
 }
@@ -72,6 +77,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 100px; /* Add top padding to account for fixed header */
+  box-sizing: border-box;
 }
 
 .scroll-container {
@@ -84,6 +91,12 @@ body {
   margin: auto;
   font-size: 1.1rem;
   position: relative;
+}
+
+/* Fix styling for fasticle pages that use a different layout */
+div[style*="margin: 0 0 0 300px"] {
+  margin-top: 100px !important; /* Override inline style with !important */
+  margin-left: 300px;
 }
 
 h1, h2, h3 {
