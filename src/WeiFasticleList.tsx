@@ -29,6 +29,16 @@ const WeiFasticleList: React.FC = () => {
           <div style={{ fontSize: 14, color: '#666', lineHeight: 1.5 }}>
             <p>The Book of Wei contains records of emperors, nobles, and officials during the Cao Wei dynasty.</p>
             <p>Select a fasticle to view detailed historical records.</p>
+            
+            <div style={{ marginTop: 16, padding: 12, background: 'rgba(34, 85, 170, 0.05)', borderRadius: 6, border: '1px solid rgba(34, 85, 170, 0.15)' }}>
+              <h5 style={{ margin: '0 0 8px 0', color: '#2255aa', fontSize: 14 }}>About the Wei Kingdom</h5>
+              <p style={{ margin: '0 0 8px 0', fontSize: 13 }}>
+                The Wei kingdom (220-266 CE) was founded by Cao Cao and formally established by his son Cao Pi, who forced the last Han emperor to abdicate. Wei controlled northern China and was the strongest of the Three Kingdoms militarily.
+              </p>
+              <p style={{ margin: '0 0 0 0', fontSize: 13 }}>
+                Key figures include Emperor Wu (Cao Cao), Emperor Wen (Cao Pi), Emperor Ming (Cao Rui), and notable generals and strategists like Sima Yi, Xiahou Dun, Zhang Liao, and Guo Jia.
+              </p>
+            </div>
           </div>
         </div>
       </nav>

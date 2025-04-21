@@ -37,7 +37,7 @@ const Home: React.FC = () => {
           backgroundColor: '#f8f8f8',
           transition: 'transform 0.2s, box-shadow 0.2s',
         }}>
-          <h2 style={{ color: '#c93c3c', marginTop: '0' }}>Book of Shu</h2>
+          <h2 style={{ color: '#1e824c', marginTop: '0' }}>Book of Shu</h2>
           <div style={{ color: '#333', fontSize: '0.95em' }}>Records of Liu Bei and the Shu kingdom</div>
         </Link>
         
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
           backgroundColor: '#f8f8f8',
           transition: 'transform 0.2s, box-shadow 0.2s',
         }}>
-          <h2 style={{ color: '#1e824c', marginTop: '0' }}>Book of Wu</h2>
+          <h2 style={{ color: '#c93c3c', marginTop: '0' }}>Book of Wu</h2>
           <div style={{ color: '#333', fontSize: '0.95em' }}>Records of Sun Quan and the Wu kingdom</div>
         </Link>
       </div>
