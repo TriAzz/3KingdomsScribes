@@ -10,6 +10,18 @@ const WuFasticleDetail: React.FC = () => {
     return <div className="scroll-container"><h2>Not Found</h2></div>;
   }
 
+  // Check if the fasticle has no content yet ("To Be Added")
+  if (fasticle.status.text === "To Be Added") {
+    return (
+      <div className="scroll-container">
+        <h2>{fasticle.name}</h2>
+        <p style={{ fontStyle: 'italic', marginTop: '2em', fontSize: '1.2em' }}>
+          The record of {fasticle.mainPeople.join(', ')} will be added at a later time.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div style={{ 
       display: 'flex', 
@@ -21,7 +33,9 @@ const WuFasticleDetail: React.FC = () => {
     }}>
       {/* Left Navigation Menu */}
       <nav style={{ 
-        minWidth: 240, 
+        width: 320,
+        minWidth: 320,
+        maxWidth: 320, 
         marginRight: 35, 
         background: '#f5f7fa', 
         borderRadius: 8, 
