@@ -11,6 +11,8 @@ import WeiFasticleDetail from './WeiFasticleDetail';
 import ShuFasticleDetail from './ShuFasticleDetail';
 import WuFasticleDetail from './WuFasticleDetail';
 import ThreeKingdomsChatbot from './ThreeKingdomsChatbot';
+import QuizPage from './QuizPage';
+import MultipleChoiceQuiz from './MultipleChoiceQuiz';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -25,6 +27,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/wu" element={<WuFasticleList />} />
           <Route path="/wu/:id" element={<WuFasticleDetail />} />
           <Route path="/chatbot" element={<ThreeKingdomsChatbot />} />
+          <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/quiz/multiple-choice-quiz" element={<MultipleChoiceQuiz />} />
         </Routes>
       </App>
     </BrowserRouter>

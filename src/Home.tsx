@@ -55,6 +55,24 @@ const Home: React.FC = () => {
           <div style={{ color: '#333', fontSize: '0.95em' }}>Records of Sun Quan and the Wu kingdom</div>
         </Link>
       </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', gap: '20px' }}>
+        <Link to="/quiz" className="feature-link" style={{ 
+          padding: '15px 20px', 
+          border: '1.5px solid #e5d3a1', 
+          borderRadius: '12px',
+          textDecoration: 'none',
+          backgroundColor: 'rgba(255,249,222,0.7)',
+          color: '#6b4a1b',
+          fontSize: '1.1em',
+          fontWeight: 'bold',
+          transition: 'transform 0.2s, box-shadow 0.2s',
+          boxShadow: '0 2px 8px rgba(60,40,10,0.08)',
+        }}>
+          <span>Trivia Quiz</span>
+        </Link>
+      </div>
+      
       <div style={{ 
         marginTop: '60px', 
         borderTop: '1px solid #e0e0e0', 

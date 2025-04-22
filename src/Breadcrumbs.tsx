@@ -9,6 +9,8 @@ const PATH_LABELS: Record<string, string> = {
   '/wei': 'Book of Wei',
   '/shu': 'Book of Shu',
   '/wu': 'Book of Wu',
+  '/quiz': 'Trivia Quizzes',
+  '/quiz/multiple-choice-quiz': 'Multiple Choice Quiz',
 };
 
 function getFasticleBreadcrumb(book: string, id: string) {
