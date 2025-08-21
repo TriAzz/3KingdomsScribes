@@ -10,8 +10,8 @@ interface Question {
 }
 
 const MultipleChoiceQuiz: React.FC = () => {
-  // Three Kingdoms questions
-  const questions: Question[] = [
+  // Easy difficulty questions
+  const easyQuestions: Question[] = [
     {
       id: 1,
       text: "Although likely not a real quote, the famous saying \"I would rather betray the world than let the world betray me\" is attributed to which character in the Three Kingdoms?",
@@ -33,32 +33,37 @@ const MultipleChoiceQuiz: React.FC = () => {
     }
   ];
 
+  const [selectedDifficulty, setSelectedDifficulty] = useState<string | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
-  const [randomizedAnswers, setRandomizedAnswers] = useState<string[]>([]);
   
-  // Function to randomize the order of answers
-  const randomizeAnswers = (answers: string[]): string[] => {
-    const shuffled = [...answers];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  };
-  
-  // Set up randomized answers when the component loads or question changes
+  // Reset answer selection and explanation when question changes
   useEffect(() => {
-    if (questions[currentQuestionIndex]) {
-      setRandomizedAnswers(randomizeAnswers(questions[currentQuestionIndex].answers));
-      setSelectedAnswer(null);
-      setShowExplanation(false);
-    }
+    setSelectedAnswer(null);
+    setShowExplanation(false);
   }, [currentQuestionIndex]);
 
+  // Get current questions based on selected difficulty
+  const getCurrentQuestions = () => {
+    switch (selectedDifficulty) {
+      case 'easy':
+        return easyQuestions;
+      default:
+        return [];
+    }
+  };
+
+  const questions = getCurrentQuestions();
   const currentQuestion = questions[currentQuestionIndex];
   
+  const handleDifficultySelect = (difficulty: string) => {
+    setSelectedDifficulty(difficulty);
+    setCurrentQuestionIndex(0);
+    setSelectedAnswer(null);
+    setShowExplanation(false);
+  };
+
   const handleAnswerClick = (answer: string) => {
     if (selectedAnswer !== null) return; // Prevent changing answer after selection
     
@@ -122,6 +127,103 @@ const MultipleChoiceQuiz: React.FC = () => {
     }
   };
 
+  // Difficulty selection screen
+  if (!selectedDifficulty) {
+    return (
+      <div className="scroll-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+        {/* Breadcrumb navigation */}
+        <div style={{ 
+          display: 'flex', 
+          gap: '8px', 
+          alignItems: 'center',
+          marginBottom: '20px',
+          fontSize: '0.9rem'
+        }}>
+          <Link to="/" className="breadcrumb-link">Home</Link>
+          <span>›</span>
+          <Link to="/quiz" className="breadcrumb-link">Trivia Quiz</Link>
+          <span>›</span>
+          <span style={{ color: '#6b4a1b' }}>Multiple Choice Questions</span>
+        </div>
+        
+        <h1>Multiple Choice Questions</h1>
+        
+        <div style={{ 
+          backgroundColor: 'rgba(245,235,200,0.7)',
+          borderRadius: '18px',
+          padding: '24px',
+          marginBottom: '30px',
+          boxShadow: '0 4px 12px rgba(60,40,10,0.10)',
+        }}>
+          <h2 style={{ color: '#6b4a1b', marginTop: '0', marginBottom: '20px' }}>Select Difficulty Level</h2>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div 
+              onClick={() => handleDifficultySelect('easy')}
+              style={{
+                backgroundColor: '#f8f9fa',
+                padding: '20px',
+                borderRadius: '12px',
+                border: '2px solid #e5d3a1',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#f1f3f4';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#f8f9fa';
+                e.currentTarget.style.transform = 'translateY(0px)';
+              }}
+            >
+              <h3 style={{ color: '#6b4a1b', margin: '0 0 10px 0' }}>Easy</h3>
+              <p style={{ margin: '0', color: '#666' }}>Basic questions about well-known events and characters</p>
+              <div style={{ 
+                marginTop: '10px', 
+                fontSize: '0.9rem', 
+                color: '#6b4a1b',
+                fontWeight: 'bold'
+              }}>
+                2 Questions Available
+              </div>
+            </div>
+            
+            <div style={{
+              backgroundColor: '#f5f5f5',
+              padding: '20px',
+              borderRadius: '12px',
+              border: '2px solid #ddd',
+              opacity: 0.6,
+              textAlign: 'center'
+            }}>
+              <h3 style={{ color: '#999', margin: '0 0 10px 0' }}>Medium</h3>
+              <p style={{ margin: '0', color: '#999' }}>Coming Soon</p>
+            </div>
+            
+            <div style={{
+              backgroundColor: '#f5f5f5',
+              padding: '20px',
+              borderRadius: '12px',
+              border: '2px solid #ddd',
+              opacity: 0.6,
+              textAlign: 'center'
+            }}>
+              <h3 style={{ color: '#999', margin: '0 0 10px 0' }}>Hard</h3>
+              <p style={{ margin: '0', color: '#999' }}>Coming Soon</p>
+            </div>
+          </div>
+        </div>
+        
+        <div style={{ textAlign: 'center', marginTop: '30px' }}>
+          <Link to="/quiz" className="breadcrumb-link">
+            Back to Quizzes
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="scroll-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       {/* Breadcrumb navigation */}
@@ -136,10 +238,10 @@ const MultipleChoiceQuiz: React.FC = () => {
         <span>›</span>
         <Link to="/quiz" className="breadcrumb-link">Trivia Quiz</Link>
         <span>›</span>
-        <span style={{ color: '#6b4a1b' }}>Multiple Choice Quiz</span>
+        <span style={{ color: '#6b4a1b' }}>Multiple Choice Questions</span>
       </div>
       
-      <h1>Multiple Choice Quiz</h1>
+      <h1>Multiple Choice Questions - {selectedDifficulty?.charAt(0).toUpperCase() + selectedDifficulty?.slice(1)}</h1>
       
       <div style={{ 
         backgroundColor: 'rgba(245,235,200,0.7)',
@@ -154,7 +256,7 @@ const MultipleChoiceQuiz: React.FC = () => {
         <h2 style={{ color: '#6b4a1b', marginTop: '0' }}>{currentQuestion.text}</h2>
         
         <div style={{ marginTop: '20px' }}>
-          {randomizedAnswers.map((answer, index) => (
+          {currentQuestion.answers.map((answer, index) => (
             <div 
               key={index}
               onClick={() => handleAnswerClick(answer)}
@@ -211,6 +313,18 @@ const MultipleChoiceQuiz: React.FC = () => {
       </div>
       
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <button 
+          onClick={() => setSelectedDifficulty(null)}
+          className="breadcrumb-link"
+          style={{ 
+            background: 'none', 
+            border: 'none', 
+            cursor: 'pointer',
+            marginRight: '20px'
+          }}
+        >
+          Change Difficulty
+        </button>
         <Link to="/quiz" className="breadcrumb-link">
           Back to Quizzes
         </Link>
