@@ -29,7 +29,7 @@ const MultipleChoiceQuiz: React.FC = () => {
       text: "Hefei was attacked by Sun Quan and his successors 6 times throughout the period ranging from 208 to 253. What year was the famous siege in which Zhang Liao, Yue Jin and Li Dian repelled a massive force (about 100,000) with only a small force?",
       answers: ["208", "215", "233", "253"],
       correctAnswer: "215",
-      explanation: "The famous Battle of Hefei occurred in 215 CE when Zhang Liao, Yue Jin, and Li Dian defended the city against Sun Quan's massive army with only about 7,000 troops.\n\nThe other sieges of Hefei were:\n\n• **208 CE**: The first siege occurred during Cao Cao's southern campaign, before the Battle of Red Cliffs. Sun Quan attacked Hefei but retreated after an indecisive engagement with Liu Fu and Jiang Ji.\n\n• **233 CE**: This battle occurred after Zhuge Liang's Northern Expeditions had begun. Sun Quan attacked Hefei again but was repelled by Man Chong, who had demolished the previous Hefei and rebuilt it further west as the 'New City' of Hefei.\n\n• **253 CE**: The final major assault on Hefei occurred when Wu regent Zhuge Ke led Wu forces against the city, but retreated when Sima Fu arrived with 200,000 Wei troops as reinforcements."
+      explanation: "The famous Battle of Hefei occurred in 215 CE when Zhang Liao, Yue Jin, and Li Dian defended the city against Sun Quan's massive army with only about 7,000 troops.\n\nThe other sieges of Hefei were:\n\n• 208 CE: The first siege occurred during Cao Cao's southern campaign, before the Battle of Red Cliffs. Sun Quan attacked Hefei but retreated after an indecisive engagement with Liu Fu and Jiang Ji.\n\n• 233 CE: This battle occurred after Zhuge Liang's Northern Expeditions had begun. Sun Quan attacked Hefei again but was repelled by Man Chong, who had demolished the previous Hefei and rebuilt it further west as the 'New City' of Hefei.\n\n• 253 CE: The final major assault on Hefei occurred when Wu regent Zhuge Ke led Wu forces against the city, but retreated when Sima Fu arrived with 200,000 Wei troops as reinforcements."
     },
     {
       id: 3,
@@ -313,19 +313,32 @@ const MultipleChoiceQuiz: React.FC = () => {
             animation: 'fadeIn 0.5s'
           }}>
             <h3 style={{ color: '#6b4a1b', marginTop: '0' }}>Explanation</h3>
-            <p style={{ lineHeight: '1.6' }}>
-              {currentQuestion.explanation.split(/\n\n|<br\s*\/?>/g).map((para, i) => (
-                <span key={i}>
-                  {para.split(/\n|• /g).map((line, j, arr) =>
-                    line.trim() === '' ? null :
-                    (arr[j-1] && arr[j-1].endsWith('• ')) ? <span key={j}><br />• {line.trim()}<br /></span> :
-                    (line.startsWith('• ') ? <span key={j}><br />{line}<br /></span> :
-                    <>{line}{j < arr.length-1 ? <br /> : null}</>)
-                  )}
-                  <br />
-                </span>
-              ))}
-            </p>
+            <div style={{
+              lineHeight: '1.7',
+              textAlign: 'left',
+            }}>
+              {currentQuestion.explanation.split(/\n\n/).map((para, i) => {
+                // Bullet section
+                if (para.trim().startsWith('•')) {
+                  return (
+                    <div key={i} style={{ margin: '18px 0 18px 0' }}>
+                      {para.split(/\n/).map((line, j) =>
+                        line.trim().startsWith('•') ? (
+                          <div key={j} style={{ marginLeft: 18 }}>
+                            {line.trim()}
+                          </div>
+                        ) : null
+                      )}
+                    </div>
+                  );
+                } else {
+                  // Regular paragraph
+                  return (
+                    <div key={i} style={{ margin: '18px 0' }}>{para}</div>
+                  );
+                }
+              })}
+            </div>
           </div>
         )}
         
