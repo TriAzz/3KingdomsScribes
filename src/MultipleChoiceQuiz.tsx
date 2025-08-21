@@ -22,7 +22,7 @@ const MultipleChoiceQuiz: React.FC = () => {
         "Liu Bei"
       ],
       correctAnswer: "Cao Cao",
-      explanation: "This quote is commonly attributed to Cao Cao, reflecting his pragmatic and sometimes ruthless approach to politics and warfare. While the exact phrase does not appear in historical records, it became associated with Cao Cao through later interpretations of his character, particularly in the Romance of the Three Kingdoms novel.\n\nThe quote captures the essence of Cao Cao's strategic mindset - he was known for preemptive actions and prioritizing practical results over idealistic principles.\n\nThe other figures have different characterizations:\n• Dong Zhuo was portrayed as simply tyrannical without such philosophical justifications\n• Yuan Shao was known for his indecisiveness and adherence to aristocratic traditions\n• Liu Bei was characterized as prioritizing virtue and righteousness above pragmatism"
+      explanation: "This quote is famously attributed to Cao Cao in the novel Romance of the Three Kingdoms, where it encapsulates his pragmatic and often ruthless philosophy. While not found in historical records, the line effectively portrays his character as a leader who prioritized practical outcomes and preemptive action over traditional morality.\n\nDong Zhuo: Portrayed as a brute tyrant who was cruel for his own pleasure, lacking the complex, philosophical justification suggested by the quote.\nYuan Shao: Known for his aristocratic bearing but also his chronic indecisiveness, which is contrary to the decisive and proactive nature of the quote.\nLiu Bei: Characterized as the opposite of Cao Cao, prioritizing benevolence, virtue, and righteousness, often to his own detriment."
     },
     {
       id: 2,
@@ -53,7 +53,7 @@ const MultipleChoiceQuiz: React.FC = () => {
         "Li Jue"
       ],
       correctAnswer: "Xu Rong",
-      explanation: "Xu Rong, a general under Dong Zhuo, defeated Cao Cao at Xingyang in 190 CE. Cao Cao was wounded and had to be rescued by his cousin Cao Hong. Lu Bu and Hua Xiong are famous generals from the same era, but neither fought Cao Cao at Xingyang. Li Jue became prominent later, after Dong Zhuo's death."
+      explanation: "At the Battle of Xingyang in 190 CE, Cao Cao's pursuing force was ambushed and decisively defeated by Xu Rong, one of Dong Zhuo's most capable generals. This was a severe early-career setback for Cao Cao, who barely escaped with his life thanks to the actions of his cousin, Cao Hong.\n\nLu Bu: While Dong Zhuo's most famous warrior, historical records do not place him at the engagement at Xingyang.\nHua Xiong: A figure greatly embellished in the Romance of the Three Kingdoms novel, where he is a mighty general slain by Guan Yu. Historically, Hua Xiong was a subordinate officer under Dong Zhuo who was defeated and killed by Sun Jian's army, not Cao Cao's.\nLi Jue: A senior commander under Dong Zhuo, Li Jue was a key figure in Dong Zhuo's army but is not recorded as being present at Xingyang. He would later rise to prominence by seizing control of the capital Chang'an after Dong Zhuo's assassination."
     },
     {
       id: 5,
@@ -66,6 +66,18 @@ const MultipleChoiceQuiz: React.FC = () => {
       ],
       correctAnswer: "Liu Bei",
       explanation: "Liu Bei, the founding emperor of Shu Han, had the shortest imperial reign of the entire Three Kingdoms period. He declared himself emperor in 221 CE and ruled for only about two years before his death in 223 CE, following his devastating defeat at the hands of Wu at the Battle of Yiling.\n\nThe other emperors listed also had notably short reigns:\n\n• Cao Pi: The first emperor of Cao Wei, he reigned from 220 CE until his death from illness in 226 CE, for a total of about six years.\n• Cao Mao: The fourth emperor of Cao Wei, he also reigned for about six years, from 254 CE to 260 CE, before he was killed during a failed coup against the regent Sima Zhao.\n• Sun Liang: The second emperor of Eastern Wu, he had the shortest reign of any Wu monarch. He ruled from 252 CE to 258 CE (about six years) before being deposed by the regent Sun Chen."
+    },
+    {
+      id: 6,
+      text: "In Romance of the Three Kingdoms, Yan Liang and Wen Chou are famously killed by Guan Yu. However, who historically killed each of these Generals?",
+      answers: [
+        "Guan Yu killed both Yan Liang and Wen Chou.",
+        "Guan Yu killed Yan Liang; Wen Chou was killed by Cao Cao's cavalry.",
+        "Cao Cao's Cavalry killed Yan Liang; Zhang Liao killed Wen Chou.",
+        "Both were killed by Cao Cao's cavalry."
+      ],
+      correctAnswer: "Guan Yu killed Yan Liang; Wen Chou was killed by Cao Cao's cavalry.",
+      explanation: "The historical account of these events, found in Chen Shou's Records of the Three Kingdoms, confirms Guan Yu's feat against Yan Liang but attributes Wen Chou's death to a cavalry charge during a cleverly orchestrated rout, not a duel.\n\nYan Liang's Death (Battle of Boma, 200 CE): The historical record is clear and dramatic. While temporarily serving Cao Cao, Guan Yu saw Yan Liang's command canopy, charged directly through Yuan Shao's army, killed Yan Liang in the midst of his soldiers, and returned with his severed head.\n\nWen Chou's Death (Battle of Yan Ford, 200 CE): The novel creates a duel where Guan Yu slays Wen Chou. Historically, Cao Cao, following a plan from his advisor Xun You, used a baggage train as bait to disorder Wen Chou's advancing army. When Wen Chou's troops broke formation to plunder the supplies, Cao Cao's elite cavalry unit charged into the chaotic mass. The Sanguozhi records that Wen Chou was killed during this rout, with no single individual credited for the kill and no mention of Guan Yu's involvement in this specific engagement."
     }
   ];
 
@@ -221,7 +233,7 @@ const MultipleChoiceQuiz: React.FC = () => {
                 color: '#6b4a1b',
                 fontWeight: 'bold'
               }}>
-                5 Questions Available
+                6 Questions Available
               </div>
             </div>
             
