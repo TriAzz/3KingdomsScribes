@@ -33,27 +33,27 @@ const MultipleChoiceQuiz: React.FC = () => {
     },
     {
       id: 3,
-      text: "Chen Shou, the historian who compiled the Records of the Three Kingdoms (Sanguo Zhi), served as an official before the Jin Dynasty unified China. Which kingdom did he originally serve?",
+      text: "Before compiling the Records of the Three Kingdoms, Chen Shou served as an official in which kingdom?",
       answers: [
         "Shu",
-        "Wei", 
+        "Wei",
         "Wu",
         "Jin"
       ],
       correctAnswer: "Shu",
-      explanation: "Chen Shou originally served the Kingdom of Shu under Liu Shan (Liu Bei's son) before Shu's fall in 263 CE. After Shu's defeat, he was relocated to Luoyang where he later served the Jin Dynasty.\n\nThis background gave Chen Shou unique insights into Shu's internal workings, though some historians suggest it may have influenced his portrayal of the different kingdoms in his Records.\n\nThe other kingdoms:\n• **Wei**: Chen Shou never served Wei directly, though he lived under Jin rule (which succeeded Wei)\n• **Wu**: Wu was the last kingdom to fall (280 CE), and Chen Shou had no direct service there\n• **Jin**: While Chen Shou did serve Jin and wrote his historical work under their patronage, the question asks about his original service before Jin's unification"
+      explanation: "Chen Shou served as an official in Shu under Liu Shan before the kingdom's fall in 263 CE. After Shu was conquered, he later worked under the Jin dynasty, where he wrote the Sanguo Zhi. His early career in Shu gave him direct access to many of the figures and records of that state."
     },
     {
       id: 4,
-      text: "During the Coalition Against Dong Zhuo, Cao Cao suffered a significant defeat in his only major engagement of this campaign. Which general defeated him at the Battle of Xingyang?",
+      text: "During the Coalition Against Dong Zhuo, Cao Cao suffered a major defeat in his only significant engagement of the campaign. Which general defeated him at the Battle of Xingyang?",
       answers: [
         "Xu Rong",
-        "Li Jue",
-        "Guo Si", 
-        "Zhang Ji"
+        "Lu Bu",
+        "Hua Xiong",
+        "Li Jue"
       ],
       correctAnswer: "Xu Rong",
-      explanation: "Xu Rong, one of Dong Zhuo's capable generals, defeated Cao Cao at the Battle of Xingyang in 190 CE. This was Cao Cao's only major military engagement during the coalition war, and the defeat was severe enough that Cao Cao was wounded and had to be rescued by his cousin Cao Hong.\n\nThis early setback taught Cao Cao valuable lessons about military strategy and the importance of proper reconnaissance and preparation.\n\nThe other generals mentioned:\n• **Li Jue**: A powerful warlord who later controlled the Han Emperor after Dong Zhuo's death, but was not the one who defeated Cao Cao at Xingyang\n• **Guo Si**: Li Jue's partner in controlling Chang'an, also came to power after Dong Zhuo's assassination\n• **Zhang Ji**: Another of Dong Zhuo's generals, but not the one responsible for Cao Cao's defeat at this battle"
+      explanation: "Xu Rong, a general under Dong Zhuo, defeated Cao Cao at Xingyang in 190 CE. Cao Cao was wounded and had to be rescued by his cousin Cao Hong. Lu Bu and Hua Xiong are famous generals from the same era, but neither fought Cao Cao at Xingyang. Li Jue became prominent later, after Dong Zhuo's death."
     },
     {
       id: 5,
@@ -221,7 +221,7 @@ const MultipleChoiceQuiz: React.FC = () => {
                 color: '#6b4a1b',
                 fontWeight: 'bold'
               }}>
-                2 Questions Available
+                5 Questions Available
               </div>
             </div>
             
@@ -313,7 +313,19 @@ const MultipleChoiceQuiz: React.FC = () => {
             animation: 'fadeIn 0.5s'
           }}>
             <h3 style={{ color: '#6b4a1b', marginTop: '0' }}>Explanation</h3>
-            <p style={{ lineHeight: '1.6' }}>{currentQuestion.explanation}</p>
+            <p style={{ lineHeight: '1.6' }}>
+              {currentQuestion.explanation.split(/\n\n|<br\s*\/?>/g).map((para, i) => (
+                <span key={i}>
+                  {para.split(/\n|• /g).map((line, j, arr) =>
+                    line.trim() === '' ? null :
+                    (arr[j-1] && arr[j-1].endsWith('• ')) ? <span key={j}><br />• {line.trim()}<br /></span> :
+                    (line.startsWith('• ') ? <span key={j}><br />{line}<br /></span> :
+                    <>{line}{j < arr.length-1 ? <br /> : null}</>)
+                  )}
+                  <br />
+                </span>
+              ))}
+            </p>
           </div>
         )}
         
