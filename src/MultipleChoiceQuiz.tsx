@@ -30,6 +30,42 @@ const MultipleChoiceQuiz: React.FC = () => {
       answers: ["208", "215", "233", "253"],
       correctAnswer: "215",
       explanation: "The famous Battle of Hefei occurred in 215 CE when Zhang Liao, Yue Jin, and Li Dian defended the city against Sun Quan's massive army with only about 7,000 troops.\n\nThe other sieges of Hefei were:\n\n• **208 CE**: The first siege occurred during Cao Cao's southern campaign, before the Battle of Red Cliffs. Sun Quan attacked Hefei but retreated after an indecisive engagement with Liu Fu and Jiang Ji.\n\n• **233 CE**: This battle occurred after Zhuge Liang's Northern Expeditions had begun. Sun Quan attacked Hefei again but was repelled by Man Chong, who had demolished the previous Hefei and rebuilt it further west as the 'New City' of Hefei.\n\n• **253 CE**: The final major assault on Hefei occurred when Wu regent Zhuge Ke led Wu forces against the city, but retreated when Sima Fu arrived with 200,000 Wei troops as reinforcements."
+    },
+    {
+      id: 3,
+      text: "Chen Shou, the historian who compiled the Records of the Three Kingdoms (Sanguo Zhi), served as an official before the Jin Dynasty unified China. Which kingdom did he originally serve?",
+      answers: [
+        "Shu",
+        "Wei", 
+        "Wu",
+        "Jin"
+      ],
+      correctAnswer: "Shu",
+      explanation: "Chen Shou originally served the Kingdom of Shu under Liu Shan (Liu Bei's son) before Shu's fall in 263 CE. After Shu's defeat, he was relocated to Luoyang where he later served the Jin Dynasty.\n\nThis background gave Chen Shou unique insights into Shu's internal workings, though some historians suggest it may have influenced his portrayal of the different kingdoms in his Records.\n\nThe other kingdoms:\n• **Wei**: Chen Shou never served Wei directly, though he lived under Jin rule (which succeeded Wei)\n• **Wu**: Wu was the last kingdom to fall (280 CE), and Chen Shou had no direct service there\n• **Jin**: While Chen Shou did serve Jin and wrote his historical work under their patronage, the question asks about his original service before Jin's unification"
+    },
+    {
+      id: 4,
+      text: "During the Coalition Against Dong Zhuo, Cao Cao suffered a significant defeat in his only major engagement of this campaign. Which general defeated him at the Battle of Xingyang?",
+      answers: [
+        "Xu Rong",
+        "Li Jue",
+        "Guo Si", 
+        "Zhang Ji"
+      ],
+      correctAnswer: "Xu Rong",
+      explanation: "Xu Rong, one of Dong Zhuo's capable generals, defeated Cao Cao at the Battle of Xingyang in 190 CE. This was Cao Cao's only major military engagement during the coalition war, and the defeat was severe enough that Cao Cao was wounded and had to be rescued by his cousin Cao Hong.\n\nThis early setback taught Cao Cao valuable lessons about military strategy and the importance of proper reconnaissance and preparation.\n\nThe other generals mentioned:\n• **Li Jue**: A powerful warlord who later controlled the Han Emperor after Dong Zhuo's death, but was not the one who defeated Cao Cao at Xingyang\n• **Guo Si**: Li Jue's partner in controlling Chang'an, also came to power after Dong Zhuo's assassination\n• **Zhang Ji**: Another of Dong Zhuo's generals, but not the one responsible for Cao Cao's defeat at this battle"
+    },
+    {
+      id: 5,
+      text: "Which emperor had the shortest reign of any of the Three Kingdoms?",
+      answers: [
+        "Cao Pi",
+        "Cao Mao",
+        "Sun Liang",
+        "Liu Bei"
+      ],
+      correctAnswer: "Liu Bei",
+      explanation: "Liu Bei, the founding emperor of Shu Han, had the shortest imperial reign of the entire Three Kingdoms period. He declared himself emperor in 221 CE and ruled for only about two years before his death in 223 CE, following his devastating defeat at the hands of Wu at the Battle of Yiling.\n\nThe other emperors listed also had notably short reigns:\n\n• Cao Pi: The first emperor of Cao Wei, he reigned from 220 CE until his death from illness in 226 CE, for a total of about six years.\n• Cao Mao: The fourth emperor of Cao Wei, he also reigned for about six years, from 254 CE to 260 CE, before he was killed during a failed coup against the regent Sima Zhao.\n• Sun Liang: The second emperor of Eastern Wu, he had the shortest reign of any Wu monarch. He ruled from 252 CE to 258 CE (about six years) before being deposed by the regent Sun Chen."
     }
   ];
 
