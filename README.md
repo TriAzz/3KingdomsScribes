@@ -1,4 +1,4 @@
-# React + Three Kingdoms History Website
+# Three Kingdoms History Website
 
 *This project was created in large part using GitHub Copilot and Windsurf as part of the Deakin InnovAIte initiative investigating AI tools.*
 
